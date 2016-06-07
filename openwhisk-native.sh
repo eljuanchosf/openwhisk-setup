@@ -25,7 +25,8 @@ curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
 # Allow database access from everywhere. NOT READY for production.
 sudo sed -i -- "s/;bind_address = 127.0.0.1/bind_address = 0.0.0.0/g" /etc/couchdb/local.ini
 sudo service couchdb restart
-sleep 5
+echo "Waiting for CouchDB to start..."
+sleep 10
 
 # Create the admin user
 curl -X PUT http://$DB_HOST:$DB_PORT/_config/admins/$DB_USER -d '"'"$DB_PASSWORD"'"'
