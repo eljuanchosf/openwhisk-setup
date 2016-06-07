@@ -1,0 +1,5 @@
+prefix = "my"
+aws_key_path = "~/.ssh/your-access-pem.pem"
+aws_key_name = "your-access-pem"
+aws_region = "us-east-1"
+aws_openwhisk_ami = "ami-fce3c696"
