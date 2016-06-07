@@ -51,7 +51,10 @@ sed -i -- "s/OPEN_WHISK_DB_PASSWORD=/OPEN_WHISK_DB_PASSWORD=$DB_PASSWORD/g" couc
 tools/db/createImmortalDBs.sh
 
 # Install all the rest of the dependencies
-(cd tools/ubuntu-setup && source all.sh)
+cd tools/ubuntu-setup
+source all.sh
+
+cd $OPEN_WHISK_HOME
 
 # Build, deploy and run
 ant clean build deploy
