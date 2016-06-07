@@ -6,6 +6,8 @@
 # Distributed under terms of the MIT license.
 #
 
+set -e
+
 OPEN_WHISK_HOME=~/workspace/openwhisk
 
 # Database config
