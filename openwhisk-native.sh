@@ -54,7 +54,7 @@ tools/db/createImmortalDBs.sh
 
 # Install all the rest of the dependencies
 cd tools/ubuntu-setup
-source all.sh
+./all.sh
 
 cd $OPEN_WHISK_HOME
 
