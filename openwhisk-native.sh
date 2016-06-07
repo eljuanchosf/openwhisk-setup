@@ -8,6 +8,12 @@
 
 OPEN_WHISK_HOME=~/workspace/openwhisk
 
+# Database config
+DB_USER=iamkyloren
+DB_PASSWORD=ILoveYouGrandPa
+DB_HOST=$(ip route get 8.8.8.8 | awk '{print $NF; exit}')
+DB_PORT=5984
+
 # Install dependencies
 sudo add-apt-repository ppa:couchdb/stable -y
 sudo apt-get update --fix-missing
@@ -16,15 +22,10 @@ sudo apt-get install git curl couchdb -y
 # Add Docker's GPG
 curl -fsSL https://get.docker.com/gpg | sudo apt-key add -
 
-# Database config
-export DB_USER=iamkyloren
-export DB_PASSWORD=ILoveYouGrandPa
-export DB_HOST=$(ip route get 8.8.8.8 | awk '{print $NF; exit}')
-export DB_PORT=5984
-
 # Allow database access from everywhere. NOT READY for production.
 sudo sed -i -- "s/;bind_address = 127.0.0.1/bind_address = 0.0.0.0/g" /etc/couchdb/local.ini
 sudo service couchdb restart
+sleep 5
 
 # Create the admin user
 curl -X PUT http://$DB_HOST:$DB_PORT/_config/admins/$DB_USER -d '"'"$DB_PASSWORD"'"'
