@@ -8,7 +8,7 @@ The purpose of this repo is to have an automated script to setup OpenWhisk the s
 
 ### AWS
 
-Clone the repo.
+1. Clone the repo.
 2. `cd` into the cloned repo directory.
 3. `terraform plan && terraform apply`
 4. `ssh` into your EC2 instance
