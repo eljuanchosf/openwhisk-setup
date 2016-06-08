@@ -79,6 +79,10 @@ resource "aws_instance" "openwhisk" {
       source = "${path.module}/openwhisk-native.sh"
       destination = "/home/ubuntu/openwhisk-native.sh"
     }
+
+		provisioner "remote-exec" {
+			inline = "chmod +x /home/$USER/openwhisk-native.sh"
+		}
 }
 
 # Outputs

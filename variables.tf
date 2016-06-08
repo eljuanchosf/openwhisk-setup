@@ -15,7 +15,7 @@ variable "prefix" {
 
 # Variables for openwhisk
 variable "aws_openwhisk_instance_type" {
-  default = "m4.large"
+  default = "t2.medium"
 }
 
 variable "openwhisk_name" {
