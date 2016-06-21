@@ -10,6 +10,8 @@ The purpose of this repo is to have an automated script to setup OpenWhisk the s
 
 1. Clone the repo.
 2. `cd` into the cloned repo directory.
+3. `cp terraform.tfvars.example terraform.tfvars`
+4. Edit the `terraform.tfvars` values accordingly
 3. `terraform plan && terraform apply`
 4. `ssh` into your EC2 instance
 5. Run the `openwhisk-native.sh` file in the user's home directory.
