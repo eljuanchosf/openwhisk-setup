@@ -2,6 +2,8 @@
 
 The purpose of this repo is to have an automated script to setup OpenWhisk the simplest, fastest and easiest possible way.
 
+Originally produced for [this](https://developer.ibm.com/openwhisk/2016/06/28/using-openwhisk-outside-ibm-bluemix/) article.
+
 ## WARNING: ONLY FOR DEVELOPMENT PURPOSES
 
 ## How to use it
